@@ -1,0 +1,57 @@
+{
+  "name": "@oskey-org/bluetooth-hci-socket",
+  "version": "0.5.3-5",
+  "description": "Bluetooth HCI socket binding for Node.js",
+  "type": "commonjs",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "engines": {
+    "node": ">=12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oskey-org/node-bluetooth-hci-socket.git"
+  },
+  "keywords": [
+    "HCI",
+    "Bluetooth",
+    "Linux",
+    "Windows"
+  ],
+  "author": "Greg PFISTER <greg@oskey.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oskey-org/node-bluetooth-hci-socket/issues"
+  },
+  "homepage": "https://github.com/oskey-org/node-bluetooth-hci-socket",
+  "os": [
+    "linux",
+    "android"
+  ],
+  "dependencies": {
+    "debug": "^4.1.1",
+    "nan": "^2.14.1",
+    "node-pre-gyp": "^0.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.6.0",
+    "jshint": "^2.12.0",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+    "build": "tsc",
+    "test": "tsc && jshint dist/*.js && node test/test.js"
+  },
+  "binary": {
+    "module_name": "bluetooth_hci_socket",
+    "module_path": "./lib/binding/",
+    "host": "https://github.com/oskey-org/node-bluetooth-hci-socket/releases/download/",
+    "package_name": "{module_name}-{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "remote_path": "{version}"
+  },
+  "jshintConfig": {
+    "esversion": 6
+  }
+}
